@@ -1,0 +1,228 @@
+:root {
+    --colorOne: #141414;
+    --colorTwo: #5c5c5c;
+    --colorWhite: #e5e5e5;
+
+    --tileBorderRadius: 4px;
+
+    --fontOne: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 2% 2%;
+}
+
+body {
+    font-family: var(--fontOne);
+    background-color: var(--colorOne);
+}
+
+.headerLogo {
+    width: 120px;
+}
+
+.swiper-container {
+    padding: 0 4%;
+    /* width: 130%; */
+}
+
+/* .swiper-wrapper {
+    width: 500px;
+} */
+
+.swiper-slide .thumbTile__image {
+    height: 250px;
+}
+
+.swiper-slide:hover {
+    z-index: 2;
+    
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    height: 100%;
+    width: 4%;
+    width: calc(4% - 5px);
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    background-color: rgba(20, 20, 20, 0.5);
+}
+
+.swiper-button-prev {
+    left: 0;
+    border-top-right-radius: var(--tileBorderRadius);
+    border-bottom-right-radius: var(--tileBorderRadius);
+}
+
+.swiper-button-next {
+    right: 0;
+    border-top-left-radius: var(--tileBorderRadius);
+    border-bottom-left-radius: var(--tileBorderRadius);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    color: #fff;
+    font-size: 4vw;
+    font-weight: bold;
+    transition: transform 0.1s ease-out;
+}
+
+.thumbTile__image {
+    border-radius: var(--tileBorderRadius);
+    cursor: pointer;
+    padding: 1px;
+}
+
+.thumbTile__image:hover {
+    transform: scale(1.075);
+    padding: 0px;
+    transition: transform 0.3s ease-out;
+}
+
+.thumbTile__image::after{
+    transform: scale(1.4);
+    padding: 0px;
+    transition: transform 0.3s ease-out;
+}
+
+@media screen and (min-width: 640px) {
+    .thumbTiles .swiper-button-prev::after,
+    .thumbTiles .swiper-button-next::after {
+        display: none;
+        font-size: 2.4vw;
+    }
+
+    .thumbTiles .swiper-button-prev:hover::after,
+    .thumbTiles .swiper-button-next:hover::after {
+        transform: scale(1.25);
+    }
+
+    .thumbTiles:hover .swiper-button-prev::after,
+    .thumbTiles:hover .swiper-button-next::after {
+        display: block;
+    }
+
+}
+
+.thumbTitle {
+    font-size: 18px;
+    line-height: 14px;
+    font-weight: 500;
+    margin: 15px 4% 12px;
+    color: #fff;
+}
+
+/* ----------------------------- Description movies ----------------------------- */
+
+.blured {
+    filter: blur(0px);
+    -webkit-filter: blur(15px);
+    pointer-events: none;
+  }
+
+  .infos-border-wrapper {
+    
+    /* -webkit-filter: blur(1px); */
+    position: fixed;
+    width: 610px;
+    left:50%;
+    bottom:auto; /* A VOIR */
+    padding: 1rem;
+    /* background: linear-gradient(to bottom, red, #141414); */
+    padding: 3px;
+    z-index: 3;
+    margin-left: -300px;
+    border-radius: .5rem .5rem;
+    
+  }
+
+  .infos-border-wrapper:active {
+    scale: (1.1);
+    transition: transform 0.8s ease-out;
+
+}
+
+.backgound-blured {
+    position: absolute;
+    top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, red, #141414);
+  filter: blur(3px);
+  z-index: -1;
+  border-radius: .5rem .5rem;
+}
+
+.infos-movie-container {
+    position:relative;
+    /* border: 2px solid black; */
+    /* border: 2px solid #d81f26; */
+    left:50%;
+    z-index: 3;
+    width: 600px;
+    background: #141414;
+    /* background: -webkit-linear-gradient(to left, #141414, #5c5c5c);
+    background: linear-gradient(to bottom, #141414, #5c5c5c); */
+    color: white;
+    margin-left: -300px;
+    border-radius: .5rem .5rem;
+    
+}
+
+.infos {
+ text-align: center;
+ padding: 10px;
+}
+
+#poster {
+    height: 400px;
+    border-radius: 1rem 1rem;
+    padding: 10px;
+}
+
+#backdrop {
+    position: absolute;
+    margin-bottom: 210px;
+    border-radius: 1rem 1rem;
+    padding: 10px;
+}
+
+#title {
+    max-height: 200px;
+    max-width: 300px;
+    position: absolute;
+    font-size: 30px;
+    left: 42%;
+    top: 35.5%;
+    right: 0%;
+    bottom: 0%;
+    margin-left: 35px;
+    text-align: center;    
+    color: #d81f26;
+    }
+
+#description {
+    text-align: justify;
+font-style: italic;
+font-size: 19px;
+}
+
+#popularity {
+position: absolute;
+text-align: left;
+}
+
+#genre {
+text-align: right;
+}
+
